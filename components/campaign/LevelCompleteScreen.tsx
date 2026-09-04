@@ -78,13 +78,8 @@ export function LevelCompleteScreen({
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
-          className="fixed inset-0 z-[80] grid place-items-center p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className="absolute inset-0 bg-ink/60 backdrop-blur-[2px]" />
+        <div className="fixed inset-0 z-[80] grid place-items-center p-4">
+          <div className="absolute inset-0 bg-ink/70 backdrop-blur-[2px]" />
           <motion.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: -24, rotateX: -50 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -174,7 +169,7 @@ export function LevelCompleteScreen({
               )}
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );

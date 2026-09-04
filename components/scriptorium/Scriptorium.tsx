@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useGame, usePachisiUnlocked } from "@/lib/store";
 import { useHydrated } from "@/lib/useHydrated";
@@ -49,6 +50,7 @@ function Station({
 
 export function Scriptorium() {
   const hydrated = useHydrated();
+  const router = useRouter();
   const lang = useGame((s) => s.lang);
   const missions = useGame((s) => s.missions);
   const discovered = useGame((s) => s.discovered);
@@ -132,14 +134,20 @@ export function Scriptorium() {
             <p>{t("m.triage.desc", lang)}</p>
             <p>
               {lang === "hi"
-                ? "अलमारियाँ छत तक जाती हैं। हर गट्ठर एक विषय है, एक परंपरा है, किसी के जीवन-भर का काम।"
-                : "The shelves run to the ceiling. Each bundle is a subject, a lineage, someone's life's work."}
+                ? "अलमारियाँ छत तक जाती हैं। समय कम है। पढ़ो, चुनो, रखो।"
+                : "The shelves run to the ceiling and the time is short. Read, choose, keep."}
             </p>
             <Hotspot
-              label={t("m.triage.name", lang)}
+              label={
+                missions.triage.done
+                  ? t("m.triage.name", lang)
+                  : lang === "hi"
+                    ? "छँटाई खेलें"
+                    : "Play the Sorting"
+              }
               kind="mission"
               done={missions.triage.done}
-              onOpen={() => setOverlay({ kind: "mission", id: "triage" })}
+              onOpen={() => router.push("/play/sorting-1")}
             />
           </Station>
 

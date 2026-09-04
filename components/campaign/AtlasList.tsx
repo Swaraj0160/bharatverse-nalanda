@@ -8,6 +8,7 @@ import { EMPTY_ENTRY } from "@/lib/games/types";
 import { t } from "@/content/i18n";
 import { HudBar } from "@/components/chrome/HudBar";
 import { Boot } from "@/components/chrome/Boot";
+import { WorldMap } from "@/components/campaign/WorldMap";
 
 function Stars({ n }: { n: number }) {
   return (
@@ -45,6 +46,10 @@ export function AtlasList() {
             : "Each node is a level. Clear one to unlock the next."}
           {hydrated && ` · ${xp} XP`}
         </p>
+
+        <div className="mt-6">
+          <WorldMap />
+        </div>
 
         {ARCS.map((arc) => (
           <section key={arc} className="mt-8">

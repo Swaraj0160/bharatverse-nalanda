@@ -21,7 +21,7 @@ export const LEVELS: LevelDef[] = [
     x: 63,
     y: 40,
     rating: 980,
-    playable: false,
+    playable: true,
     params: { seconds: 60, cart: 4, items: 8, decoys: 0, speedUp: 0 },
   },
   {
@@ -38,7 +38,7 @@ export const LEVELS: LevelDef[] = [
     x: 60,
     y: 34,
     rating: 1050,
-    playable: false,
+    playable: true,
     params: { seconds: 45, cart: 3, items: 12, decoys: 2, faceDown: 4, speedUp: 0 },
   },
   {
@@ -55,7 +55,7 @@ export const LEVELS: LevelDef[] = [
     x: 56,
     y: 28,
     rating: 1130,
-    playable: false,
+    playable: true,
     params: { seconds: 35, cart: 3, items: 16, decoys: 4, forgery: 1, faceDown: 6, speedUp: 10 },
   },
 
