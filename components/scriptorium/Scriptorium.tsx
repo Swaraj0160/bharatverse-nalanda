@@ -154,10 +154,16 @@ export function Scriptorium() {
           <Station n="iv" title={t("m.translate.name", lang)}>
             <p>{t("m.translate.desc", lang)}</p>
             <Hotspot
-              label={t("m.translate.name", lang)}
+              label={
+                missions.translate.done
+                  ? t("m.translate.name", lang)
+                  : lang === "hi"
+                    ? "पुनर्रचना खेलें"
+                    : "Play the Reconstruction"
+              }
               kind="mission"
               done={missions.translate.done}
-              onOpen={() => setOverlay({ kind: "mission", id: "translate" })}
+              onOpen={() => router.push("/play/reconstruction-1")}
             />
           </Station>
 

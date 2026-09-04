@@ -160,9 +160,20 @@
 .sort-card-in {
   animation: sort-card-in 220ms cubic-bezier(0.16, 0.84, 0.44, 1) both;
 }
+@keyframes mandala-spin {
+  from { transform: rotate(0deg); opacity: 0.4; }
+  50% { opacity: 1; }
+  to { transform: rotate(360deg); opacity: 0.4; }
+}
+.mandala-spin {
+  animation: mandala-spin 2.4s linear infinite;
+  font-size: 1.6rem;
+  color: var(--hingula);
+}
 @media (prefers-reduced-motion: reduce) {
   .juice-shake { animation: none; }
   .sort-card-in { animation: none; }
+  .mandala-spin { animation: none; }
 }
 
 /* Custom cursor — an ink nib. Disabled for coarse pointers / reduced motion. */

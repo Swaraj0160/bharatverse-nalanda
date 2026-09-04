@@ -83,5 +83,5 @@ export function PlayClient({ levelId }: { levelId: string }) {
     );
   }
 
-  return <LevelShell level={level} render={(p) => Game(p)} />;
+  return <LevelShell level={level} render={(p) => <Game {...p} />} />;
 }

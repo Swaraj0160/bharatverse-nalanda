@@ -73,7 +73,7 @@ export const LEVELS: LevelDef[] = [
     x: 68,
     y: 47,
     rating: 1000,
-    playable: false,
+    playable: true,
     params: { grid: 3, decoys: 0, rotate: 0, moveBudget: 0 },
   },
   {
@@ -90,7 +90,7 @@ export const LEVELS: LevelDef[] = [
     x: 72,
     y: 52,
     rating: 1080,
-    playable: false,
+    playable: true,
     params: { grid: 4, decoys: 3, rotate: 1, moveBudget: 26 },
   },
   {
@@ -107,7 +107,7 @@ export const LEVELS: LevelDef[] = [
     x: 76,
     y: 58,
     rating: 1150,
-    playable: false,
+    playable: true,
     params: { grid: 5, decoys: 6, rotate: 1, moveBudget: 40, fadeMs: 9000 },
   },
 
