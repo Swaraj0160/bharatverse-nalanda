@@ -99,7 +99,41 @@ function noiseBurst(dur: number, shape: (t: number) => number, filterHz: number,
   src.start();
 }
 
-type Sfx = "paper" | "ink" | "seal" | "shell";
+/** A short plucked tone — for musical game cues layered over the drone. */
+function tone(freq: number, dur: number, type: OscillatorType = "triangle", gain = 0.16) {
+  if (!ctx) return;
+  const c = ctx;
+  const o = c.createOscillator();
+  const g = c.createGain();
+  o.type = type;
+  o.frequency.setValueAtTime(freq, c.currentTime);
+  g.gain.setValueAtTime(0, c.currentTime);
+  g.gain.linearRampToValueAtTime(gain, c.currentTime + 0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+  o.connect(g);
+  g.connect(c.destination);
+  o.start();
+  o.stop(c.currentTime + dur + 0.02);
+}
+
+function chord(freqs: number[], dur: number, stagger = 0.06) {
+  freqs.forEach((f, i) => setTimeout(() => tone(f, dur, "triangle", 0.13), i * stagger * 1000));
+}
+
+type Sfx =
+  | "paper"
+  | "ink"
+  | "seal"
+  | "shell"
+  | "success"
+  | "fail"
+  | "unlock"
+  | "combo"
+  | "star"
+  | "tick"
+  | "whoosh";
+
+let comboStep = 0;
 
 export function sfx(kind: Sfx) {
   if (!ctx) return;
@@ -117,5 +151,39 @@ export function sfx(kind: Sfx) {
     case "shell":
       noiseBurst(0.18, (t) => Math.pow(1 - t, 4) * (0.6 + 0.4 * Math.random()), 4200, 1.4);
       break;
+    case "success":
+      // a rising perfect fifth on the Sa–Pa of the drone
+      tone(392, 0.18);
+      setTimeout(() => tone(587.33, 0.32, "triangle", 0.15), 90);
+      break;
+    case "fail":
+      tone(196, 0.16, "sawtooth", 0.12);
+      setTimeout(() => tone(146.83, 0.34, "sawtooth", 0.1), 80);
+      noiseBurst(0.3, (t) => Math.pow(1 - t, 2), 500, 0.8);
+      break;
+    case "unlock":
+      chord([261.63, 392, 523.25, 659.25], 0.5, 0.08);
+      break;
+    case "combo": {
+      const steps = [523.25, 587.33, 659.25, 698.46, 783.99, 880, 987.77];
+      tone(steps[Math.min(comboStep, steps.length - 1)], 0.16, "triangle", 0.14);
+      comboStep = Math.min(comboStep + 1, steps.length - 1);
+      break;
+    }
+    case "star":
+      tone(659.25, 0.14, "triangle", 0.16);
+      setTimeout(() => tone(987.77, 0.3, "triangle", 0.14), 70);
+      break;
+    case "tick":
+      tone(1046.5, 0.05, "square", 0.05);
+      break;
+    case "whoosh":
+      noiseBurst(0.26, (t) => Math.sin(Math.PI * t) * (1 - t), 1400, 0.6);
+      break;
   }
+}
+
+/** call when a streak breaks so `combo` restarts low */
+export function resetCombo() {
+  comboStep = 0;
 }

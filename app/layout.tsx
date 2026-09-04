@@ -10,6 +10,7 @@ import { PaperGrain } from "@/components/chrome/PaperGrain";
 import { NibCursor } from "@/components/chrome/NibCursor";
 import { ServiceWorker } from "@/components/chrome/ServiceWorker";
 import { Motion } from "@/components/chrome/Motion";
+import { JuiceLayer } from "@/components/juice/JuiceLayer";
 
 const display = Yatra_One({
   weight: "400",
@@ -64,6 +65,7 @@ export default function RootLayout({
         className={`${display.variable} ${body.variable} ${hand.variable} ${deva.variable} min-h-screen antialiased`}
       >
         <Motion>{children}</Motion>
+        <JuiceLayer />
         <PaperGrain />
         <NibCursor />
         <ServiceWorker />

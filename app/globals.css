@@ -135,6 +135,28 @@
   );
 }
 
+/* ---- juice ---- */
+@keyframes juice-pop {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  18% { opacity: 1; transform: translate(-50%, -70%) scale(1.15); }
+  40% { transform: translate(-50%, -85%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -160%) scale(0.95); }
+}
+@keyframes juice-shake {
+  0%, 100% { transform: translate(0, 0); }
+  15% { transform: translate(-4px, 2px); }
+  30% { transform: translate(5px, -2px); }
+  45% { transform: translate(-4px, -1px); }
+  60% { transform: translate(3px, 2px); }
+  75% { transform: translate(-2px, 1px); }
+}
+.juice-shake {
+  animation: juice-shake var(--juice-shake-ms, 260ms) ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .juice-shake { animation: none; }
+}
+
 /* Custom cursor — an ink nib. Disabled for coarse pointers / reduced motion. */
 @media (pointer: fine) {
   .cursor-armed,

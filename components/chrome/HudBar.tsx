@@ -86,6 +86,12 @@ export function HudBar({ back }: { back?: { href: string; label: string } }) {
             {t("hud.lang", lang)}
           </button>
 
+          <Link
+            href="/atlas"
+            className="border border-ink/25 px-2 py-1 font-display tracking-wide text-ink-soft hover:text-ink"
+          >
+            {lang === "hi" ? "मानचित्र" : "Atlas"}
+          </Link>
           {hydrated && unlocked && (
             <Link
               href="/pachisi"
