@@ -125,7 +125,7 @@ export const LEVELS: LevelDef[] = [
     x: 58,
     y: 22,
     rating: 1010,
-    playable: false,
+    playable: true,
     params: { cols: 7, rows: 9, patrols: 1, turnLimit: 22, shrink: 0, weather: 0 },
   },
   {
@@ -142,7 +142,7 @@ export const LEVELS: LevelDef[] = [
     x: 44,
     y: 30,
     rating: 1090,
-    playable: false,
+    playable: true,
     params: { cols: 9, rows: 11, patrols: 2, turnLimit: 24, river: 1, shrink: 0, weather: 0 },
   },
   {
@@ -159,7 +159,7 @@ export const LEVELS: LevelDef[] = [
     x: 34,
     y: 22,
     rating: 1160,
-    playable: false,
+    playable: true,
     params: { cols: 11, rows: 12, patrols: 3, turnLimit: 28, shrink: 1, weather: 1 },
   },
 

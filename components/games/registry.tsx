@@ -28,5 +28,8 @@ export const GAME_REGISTRY: Partial<Record<GameId, ComponentType<GameProps>>> = 
       ),
     { loading: Loading },
   ),
-  // road: phase 2D
+  road: dynamic(
+    () => import("@/components/games/road/RoadGame").then((m) => m.RoadGame),
+    { loading: Loading },
+  ),
 };
