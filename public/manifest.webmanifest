@@ -1,0 +1,17 @@
+{
+  "name": "BHARATVERSE — The Lost Library of Nalanda",
+  "short_name": "Nalanda",
+  "description": "A grounded heritage game. It is 1202 CE and you are the last scribe at Nalanda.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E8D6B0",
+  "theme_color": "#1B1712",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

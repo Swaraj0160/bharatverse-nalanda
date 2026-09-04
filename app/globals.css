@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --leaf: #e8d6b0;
+  --leaf-deep: #d8c097;
+  --leaf-dim: #c9b48c;
+  --tala: #c7924b;
+  --ink: #1b1712;
+  --ink-soft: #4a3f33;
+  --hingula: #b23a2e;
+  --haritala: #d9a63f;
+  --terreverte: #5b7b5a;
+  --redochre: #9c5233;
+  --lapis: #2e4c7e;
+  --edge: rgba(27, 23, 18, 0.28);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: var(--leaf);
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--leaf);
+    color: var(--ink);
+    font-family: var(--font-body), Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background: rgba(178, 58, 46, 0.24);
+    color: var(--ink);
+  }
+
+  /* Manuscript scrollbar — a tied palm-leaf strip. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--tala) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(27, 23, 18, 0.06),
+      rgba(27, 23, 18, 0.06) 3px,
+      transparent 3px,
+      transparent 9px
+    );
+  }
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--tala), var(--redochre));
+    border: 2px solid var(--leaf);
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--haritala), var(--tala));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Torn deckle edge for cards — an SVG-free clip using layered gradients. */
+  .edge-torn {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='12'%3E%3Cpath d='M0 12 L0 6 Q6 2 12 6 T24 6 T36 6 T48 6 T60 6 T72 6 T84 6 T96 6 T108 6 T120 6 T132 6 T144 6 T156 6 T168 6 T180 6 T192 6 T204 6 T216 6 T228 6 T240 6 L240 12 Z' fill='%23000'/%3E%3C/svg%3E"),
+      linear-gradient(#000, #000);
+    -webkit-mask-repeat: repeat-x, no-repeat;
+    -webkit-mask-position: top left, center;
+    -webkit-mask-size: 240px 12px, 100% 100%;
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
+  }
+
+  .ink-underline {
+    background-image: linear-gradient(transparent 62%, rgba(178, 58, 46, 0.35) 62%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .writing-reveal {
+    clip-path: inset(0 100% 0 0);
+    animation: writing-reveal 900ms cubic-bezier(0.7, 0, 0.2, 1) forwards;
+  }
+  @keyframes writing-reveal {
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+}
+
+/* Full-screen procedural paper grain (SVG turbulence, no bitmap). */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.42, 0 0 0 0 0.31, 0 0 0 0 0.18, 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 59;
+  background: radial-gradient(
+    120% 90% at 50% 20%,
+    transparent 40%,
+    rgba(27, 23, 18, 0.16) 100%
+  );
+}
+
+/* Custom cursor — an ink nib. Disabled for coarse pointers / reduced motion. */
+@media (pointer: fine) {
+  .cursor-armed,
+  .cursor-armed * {
+    cursor: none;
+  }
+}
+
+.nib-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  z-index: 90;
+  pointer-events: none;
+  transform: translate(-3px, -2px);
+  transition: opacity 200ms ease, transform 120ms cubic-bezier(0.16, 0.84, 0.44, 1);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .writing-reveal {
+    animation: none;
+    clip-path: none;
+  }
+  .nib-cursor {
+    display: none;
+  }
+  .cursor-armed,
+  .cursor-armed * {
+    cursor: auto;
+  }
+}
