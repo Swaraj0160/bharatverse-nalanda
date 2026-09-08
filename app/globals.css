@@ -15,7 +15,13 @@
   --redochre: #9c5233;
   --lapis: #2e4c7e;
   --edge: rgba(27, 23, 18, 0.28);
-  /* authored easings — ink settling, not a generic ease */
+  /* pan-India shell palette (see docs/DESIGN_SYSTEM.md) */
+  --sandstone: #d9c29a;
+  --sandstone-deep: #c4a97b;
+  --stone-deep: #8c7355;
+  --indigo: #26406b;
+  /* authored easings — weight, ink, footfall. Never a generic ease-in-out. */
+  --ease-stone: cubic-bezier(0.32, 0, 0.24, 1);
   --ease-ink: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-step: cubic-bezier(0.5, 0, 0.2, 1);
 }
@@ -163,6 +169,18 @@
 .sort-card-in {
   animation: sort-card-in 220ms cubic-bezier(0.16, 0.84, 0.44, 1) both;
 }
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise-in {
+  animation: rise-in 620ms var(--ease-stone) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise-in { animation: none; opacity: 1; transform: none; }
+}
+
 @keyframes mandala-spin {
   from { transform: rotate(0deg); opacity: 0.4; }
   50% { opacity: 1; }

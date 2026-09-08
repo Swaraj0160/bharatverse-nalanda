@@ -1,5 +1,5 @@
-import { Landing } from "@/components/landing/Landing";
+import { BharatLanding } from "@/components/shell/BharatLanding";
 
 export default function Page() {
-  return <Landing />;
+  return <BharatLanding />;
 }

@@ -17,6 +17,14 @@ const Loading = () => (
 );
 
 export const GAME_REGISTRY: Partial<Record<GameId, ComponentType<GameProps>>> = {
+  shadow: dynamic(
+    () => import("@/components/games/shadow/ShadowGame").then((m) => m.ShadowGame),
+    { loading: Loading },
+  ),
+  rebuild: dynamic(
+    () => import("@/components/games/rebuild/RebuildGame").then((m) => m.RebuildGame),
+    { loading: Loading },
+  ),
   sorting: dynamic(
     () => import("@/components/games/sorting/SortingGame").then((m) => m.SortingGame),
     { loading: Loading },

@@ -8,6 +8,8 @@ export type GameId =
   | "sorting" // Triage → The Sorting
   | "reconstruction" // The Fragment → The Reconstruction
   | "road" // The Courier → The Road
+  | "shadow" // Shadow & Stone (Konark sundial)
+  | "rebuild" // Rebuild India
   | "ashtapada"
   | "gillidanda" // → The Strike
   | "capstone"; // The Library Restored

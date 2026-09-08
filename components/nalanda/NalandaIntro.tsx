@@ -19,7 +19,7 @@ import { LampBundle } from "@/components/landing/LampBundle";
 
 const INK_EASE = [0.16, 0.84, 0.44, 1] as const;
 
-export function Landing() {
+export function NalandaIntro() {
   const ref = useRef<HTMLDivElement>(null);
   const hydrated = useHydrated();
   const reduce = useReducedMotion();

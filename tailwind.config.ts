@@ -1,10 +1,12 @@
 import type { Config } from "tailwindcss";
 
 /**
- * BHARATVERSE design tokens — palm-leaf manuscript world.
- * Note: `leaf` (#E8D6B0) is the readable page ground; `tala` (#C7924B) is the
- * mid-tone used for borders/panels/aged edges. This keeps a 4-colour-max feel
- * per screen while fixing ink-on-full-ochre contrast.
+ * BHARATVERSE design tokens — a pan-India stone-and-pigment palette.
+ *
+ * Tokens are named for real materials and pigments, never `primary-500`, so the
+ * system stays authored rather than generic. `sandstone` is the pan-India shell
+ * ground (Konark khondalite/laterite); `leaf` is retained as the palm-leaf
+ * ground for Nalanda interiors. Both keep a 4-colour-max feel per screen.
  */
 const config: Config = {
   content: [
@@ -15,6 +17,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        sandstone: "#D9C29A",
+        "sandstone-deep": "#C4A97B",
+        "stone-deep": "#8C7355",
+        indigo: "#26406B",
         leaf: "#E8D6B0",
         "leaf-deep": "#D8C097",
         "leaf-dim": "#C9B48C",
@@ -38,7 +44,10 @@ const config: Config = {
         leaf: "0 1px 0 rgba(27,23,18,0.12), 0 18px 40px -24px rgba(27,23,18,0.55)",
       },
       transitionTimingFunction: {
-        ink: "cubic-bezier(0.16, 0.84, 0.44, 1)",
+        // authored easings — weight, ink and footfall. No generic ease-in-out.
+        stone: "cubic-bezier(0.32, 0, 0.24, 1)",
+        ink: "cubic-bezier(0.22, 1, 0.36, 1)",
+        step: "cubic-bezier(0.5, 0, 0.2, 1)",
         page: "cubic-bezier(0.7, 0, 0.2, 1)",
       },
       keyframes: {
