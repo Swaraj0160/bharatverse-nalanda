@@ -1,21 +1,109 @@
-# BHARATVERSE — The Lost Library of Nalanda
+# BHARATVERSE: The Lost Library of Nalanda
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.5.25-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Three.js](https://img.shields.io/badge/3D%20%2F%20VR-Three.js%20%2B%20WebXR-black?style=for-the-badge&logo=threedotjs)](https://threejs.org/)
-[![Knowledge Graph](https://img.shields.io/badge/Graph-Force--Directed%202D-purple?style=for-the-badge)](https://github.com/vasturiano/react-force-graph)
-[![Claude AI](https://img.shields.io/badge/AI_Engine-Anthropic%20Claude-d97706?style=for-the-badge&logo=anthropic)](https://www.anthropic.com/)
-[![Smart India Hackathon](https://img.shields.io/badge/Hackathon-SIH_2026-orange?style=for-the-badge)](#smart-india-hackathon)
+<p align="center">
+  <strong>Smart India Hackathon 2026 • Problem Statement SIH26208 (Heritage & Culture)</strong><br>
+  <em>Evidence-grounded WebXR digital heritage exploration, 50-node force-directed knowledge graph, anti-hallucinatory Claude RAG, and authentic ancient Pachisi AI engine.</em>
+</p>
 
-> **An evidence-grounded digital heritage exploration and artifact preservation game.**  
-> **Smart India Hackathon 2026** • Problem Statement **SIH26208 (Heritage & Culture)**
-
-*It is 1202 CE. Bakhtiyar Khalji's raiders are three days from the Mahavihara of Nalanda. You are the last scribe on duty in the manuscript hall. What you save tonight — through **triage**, **deciphering fragmented palm leaves**, and **choosing courier escape routes** — is what future generations get to read. And when night falls, play a tactical match of ancient **Pachisi** against traveling merchants.*
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15.5.25-black?style=for-the-badge&logo=next.js" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-5.7-blue?style=for-the-badge&logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/3D%20%2F%20VR-Three.js%20%2B%20WebXR-black?style=for-the-badge&logo=threedotjs" alt="Three.js">
+  <img src="https://img.shields.io/badge/Knowledge%20Graph-Force--Directed%202D-purple?style=for-the-badge" alt="Knowledge Graph">
+  <img src="https://img.shields.io/badge/AI%20Engine-Anthropic%20Claude-d97706?style=for-the-badge&logo=anthropic" alt="Claude AI">
+  <img src="https://img.shields.io/badge/Hackathon-SIH_2026-orange?style=for-the-badge" alt="SIH 2026">
+</p>
 
 ---
 
-## 🏛️ System Architecture & Experience Loop
+## Overview
+
+**BHARATVERSE: The Lost Library of Nalanda** is an evidence-grounded digital heritage exploration and interactive manuscript preservation platform engineered for **Smart India Hackathon 2026 (Problem Statement SIH26208)** under the **Ministry of Culture**.
+
+Set in **1202 CE** during the twilight days of the Mahavihara of Nalanda before its catastrophic destruction, the player assumes the mantle of the last scribe on duty in the manuscript repository (*Dharmaganja*). Through historical **Triage**, **Fragment Reconstruction**, and **Courier Route Dispatch**, what the player successfully preserves determines what survives for future generations. When night falls in the vihara, players engage in tactical matches of ancient **Pachisi** governed by authentic cowrie-shell probability mechanics.
+
+---
+
+## The Heritage Preservation Dilemma & The Bharatverse Solution
+
+### The Challenge
+- **Fictionalized Historical Gaming:** Most historical video games prioritize romanticized fantasy over authentic archaeological facts, distorting ancient Indian history and architectural layouts.
+- **AI Hallucinations in Cultural Pedagogy:** Standard LLM chatbots frequently invent dates, fabricate battles, or hallucinate non-existent scriptures when asked about ancient monastic libraries.
+- **Passive Cultural Exhibits:** Traditional museum portals display static, non-interactive scans of palm-leaf manuscripts that fail to engage young students or impart historical causality.
+- **Loss of Traditional Games:** Indigenous strategy games like ancient Indian Pachisi (*Chaupar*) are rarely preserved with mathematical fidelity or authentic regional rule sets.
+
+### The Bharatverse Solution
+- **Strict Anti-Hallucination RAG Architecture:** "Ask the Historian" queries are bounded by a curated ground-truth corpus (`content/passages.ts`). If a question cannot be cited from primary sources (Xuanzang, Yijing, *Tabaqat-i-Nasiri*), the engine returns an in-character refusal (*"No primary source, no answer"*).
+- **Synchronized 50-Node Knowledge Graph:** When historical answers are generated, causal links between scholars (Aryabhata, Nagarjuna, Dharmakirti) and monastic institutions dynamically illuminate on an interactive force-directed graph.
+- **Empirical Pachisi Game Engine:** Fully implemented 6-cowrie shell board game (`lib/pachisi/engine.ts`) with authentic probabilistic distribution, grace throws (*chakkis*), and two-tier strategic AI.
+- **Zero-Dependency Judge Evaluation Mode:** Runs **100% offline with zero external network calls**, guaranteeing flawless hackathon demonstration even without internet connectivity.
+
+---
+
+## Scriptorium Preservation Sequence
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Scribe as Player / Scribe
+    participant Hall as Scriptorium Engine
+    participant Corpus as Nalanda Ground-Truth Corpus
+    participant Graph as 50-Node Knowledge Graph
+    participant AI as Claude RAG / Offline Evaluator
+
+    Scribe->>Hall: 1. Enter Manuscript Repository (Dharmaganja)
+    Hall->>Corpus: 2. Load Fragile Treatises (Medicine, Logic, Astronomy)
+    Scribe->>Hall: 3. Triage Action: Select Charaka Samhita over Poetry
+    Hall->>Graph: 4. Illuminate Ayurvedic Lineage Edges
+    Scribe->>Hall: 5. Fragment Reconstruction: Align Brahmi Inscription Glyphs
+    Scribe->>Hall: 6. Courier Route: Dispatch Runner along Northern Trunk Road to Tibet
+    Hall->>AI: 7. Validate Preservation Outcome vs Historic Dispersal Records
+    AI-->>Scribe: 8. Update Scribe Elo Rank & Mint Tamper-Proof Colophon Pass
+```
+
+---
+
+## Ancient Pachisi Cowrie Probability Engine
+
+The ancient game of Pachisi uses **six cowrie shells** thrown onto the board. The score and movement points depend on how many shells land with their aperture facing upward:
+
+| Apertures Facing Up | Throw Name | Movement Value | Grace Throw Granted (*Chakki*) | Exact Probability |
+|:---:|:---:|:---:|:---:|:---:|
+| **0 Up** | *Barah* | **12 Squares** | ✅ Yes | $\frac{1}{64} \approx 1.56\%$ |
+| **1 Up** | *Chhakka* | **10 Squares** | ✅ Yes | $\frac{6}{64} \approx 9.38\%$ |
+| **2 Up** | *Dugga* | **2 Squares** | ❌ No | $\frac{15}{64} \approx 23.44\%$ |
+| **3 Up** | *Tigga* | **3 Squares** | ❌ No | $\frac{20}{64} \approx 31.25\%$ |
+| **4 Up** | *Chauka* | **4 Squares** | ❌ No | $\frac{15}{64} \approx 23.44\%$ |
+| **5 Up** | *Pachees* | **25 Squares** | ✅ Yes | $\frac{6}{64} \approx 9.38\%$ |
+| **6 Up** | *Sir* | **6 Squares** | ❌ No | $\frac{1}{64} \approx 1.56\%$ |
+
+*Engine calculates exact binomial distribution $\binom{6}{k} \cdot p^k \cdot (1-p)^{6-k}$ assuming fair cowrie shell weighting ($p = 0.5$).*
+
+---
+
+## Core Implemented Capabilities
+
+### 1. The Scriptorium Preservation Trilogy
+- **The Triage:** Inspect fragile palm-leaf folios across Grammar, Logic (*Nyaya*), Astronomy, and Medicine. Decide which treatises to pack into waterproof leather couriers based on civilizational scarcity.
+- **The Fragment:** Interactive deciphering minigame requiring players to align fragmented Sanskrit Brahmi characters to restore lost astronomical theorems.
+- **The Courier:** Tactical trade-route simulator dispatching monastic runners toward Tibet, Nepal, and Kanchipuram while dodging bandit raids.
+
+### 2. "Ask the Historian" & Live Knowledge Graph
+- **Anti-Hallucination Corpus:** Grounded in authentic archaeological excavation monographs and primary travelogues from 7th-century Chinese scholar-monks Xuanzang and Yijing.
+- **Synchronized Force-Directed Graph:** An interactive 50-node, 75-edge graph rendered using `react-force-graph-2d`. Nodes pulse and filter dynamically as historical queries are answered.
+
+### 3. Ancient Indian Pachisi Engine
+- Complete implementation of the traditional cross-shaped board game (`lib/pachisi/engine.ts`).
+- Features graceful throws, pawn stacking (*goth*), castle safety zones, and a heuristic minimax AI opponent.
+
+### 4. Dual Operational Modes (Judge Sandbox vs. Live Cloud)
+- **Demo Mode (Default):** Runs **100% offline** with pre-compiled, verified historical response matrices.
+- **Live Mode:** Integrates Anthropic Claude (`claude-haiku-4-5`) constrained by an offline semantic retrieval pipeline (`lib/retrieval.ts`).
+
+---
+
+## Architecture & System Topology
 
 ```mermaid
 flowchart TD
@@ -50,41 +138,22 @@ flowchart TD
 
 ---
 
-## 🌟 Core Gameplay Pillars & Features
+## Technology Stack
 
-### 1. The Scriptorium (Manuscript Preservation Missions)
-- **The Triage:** Inspect fragile palm-leaf manuscripts and decide which treatise (astronomy, medicine, logic, grammar) to rescue first based on civilizational uniqueness and rarity.
-- **The Fragment:** Interactive deciphering puzzle reconstructing damaged Sanskrit Brahmi inscriptions.
-- **The Courier:** Route planning challenge dispatching monastic runners along historic trade roads toward Tibet, Nepal, and Kanchi.
+Verified directly from source code and package configurations:
 
-### 2. "Ask the Historian" & Live Knowledge Graph
-- **Anti-Hallucination Mandate:** Every answer displayed explicitly cites its historical source (e.g., Xuanzang's travel records, *Tabaqat-i-Nasiri*, ASI excavation monographs).
-- **In-Character Strict Refusal:** Questions outside the verified corpus are refused in-character (*"No primary source, no answer"*).
-- **Synchronized Force-Directed Graph:** When the Historian answers, the exact nodes and causal relationships on the 50-node / 75-edge knowledge graph dynamically pulse and illuminate in real time.
-
-### 3. Ancient Indian Pachisi Engine
-- Authentic recreation of the historic cross-shaped race board with six cowrie shells, grace throws (*chakkis*), strategic pawn captures, and an intelligent two-level AI opponent with match chronicles.
-
-### 4. Dual Operational Modes (Judge Demo vs. Live AI)
-- **Demo Mode (Default):** Runs **100% offline with zero external network calls**, utilizing pre-compiled, source-cited historical response maps.
-- **Live Mode:** Connects to Anthropic Claude via server route (`/api/historian`), strictly constrained by RAG over the Nalanda corpus.
+| Component | Technology | Description |
+|---|---|---|
+| **Framework** | Next.js 15.5.25 (App Router, Server Actions) | Modern SSR and static generation architecture |
+| **Frontend Core** | React 19.0.0, TypeScript 5.7 | High-performance reactive state with typed domain models |
+| **3D & WebXR** | Three.js 0.180, React Three Fiber, `@react-three/xr` | Immersive 3D Mahavihara temple ruins and VR headset support |
+| **Data Visualization** | `react-force-graph-2d` | Dynamic 50-node / 75-edge force-directed knowledge graph |
+| **State Management** | Zustand 5.0 | Lightweight persistent state for game progress and player Elo |
+| **AI Integration** | Anthropic Claude SDK (`@anthropic-ai/sdk`) | Bounded RAG pipeline with strict citation enforcement |
 
 ---
 
-## 🛠️ Technology Stack
-
-| Domain | Technologies |
-|---|---|
-| **Framework** | Next.js 15.5.25 (App Router, Server Actions) |
-| **Frontend Core** | React 19.0.0, TypeScript 5.7, Tailwind CSS 3.4 |
-| **3D & VR Exploration** | Three.js 0.180, React Three Fiber (`@react-three/fiber`), React Three Drei, `@react-three/xr` (WebXR) |
-| **Data Visualization** | `react-force-graph-2d` (Force-directed knowledge graph) |
-| **State & Animation** | Zustand 5.0, Framer Motion 13.2 |
-| **AI Integration** | Anthropic Claude SDK (`@anthropic-ai/sdk` 0.32) with local RAG fallbacks |
-
----
-
-## 📂 Project Structure
+## Repository & Directory Structure
 
 ```text
 bharatverse-nalanda/
@@ -98,87 +167,65 @@ bharatverse-nalanda/
 │   ├── map/                   # Ancient India geographic campaign progression
 │   ├── nalanda/               # Core Mahavihara narrative level
 │   ├── pachisi/               # Fullscreen Pachisi board game interface
-│   ├── passport/              # Scribe's Rank and verified achievement stamps
-│   ├── layout.tsx             # Root layout with Web Audio ambient synthesizer
-│   └── page.tsx               # Entrance gateway and narrative prologue
-├── components/
-│   ├── campaign/              # Realm progression and stage stepper
-│   ├── games/                 # Ancient game widgets
-│   ├── graph/                 # Force-directed knowledge graph visualizer
-│   ├── historian/             # "Ask the Historian" panel & citation inspector
-│   ├── journal/               # Colophon recap renderer
-│   ├── pachisi/               # Board, pawn animations, cowrie throw physics
-│   └── scriptorium/           # Triage desks, manuscript viewers, fragment puzzles
-├── content/
-│   ├── passages.ts            # Ground truth historical corpus with source citations
-│   ├── graph.ts               # Knowledge graph node and edge definitions
-│   └── historianCanned.ts     # Offline verified question-answer pairs
-├── docs/
-│   ├── BHARATVERSE_MASTER_SPEC.md # Full product specification & game mechanics
-│   ├── SOURCES.md             # Archaeological and historical references
-│   └── SETUP_REQUIRED.md     # Installation and deployment reference
+│   ├── layout.tsx             # Root application shell
+│   └── page.tsx               # Cinematic introductory portal
+├── components/                # Domain & 3D WebXR components
+│   ├── 3d/                    # Three.js monasteries, viharas, and stupas
+│   ├── graph/                 # Force-directed knowledge graph canvas
+│   └── pachisi/               # Cowrie shell physics and board rendering
+├── content/                   # Verified historical passages and corpus
 ├── lib/
-│   ├── elo.ts                 # Scribe's Rank rating and progression math
-│   ├── retrieval.ts           # Semantic scoring and passage matching
-│   └── pachisi/engine.ts      # Pachisi game rules, cowrie scoring, and AI bot
-├── package.json               # Dependencies and scripts
+│   ├── elo.ts                 # Scribe rank progression engine
+│   ├── pachisi/               # Authentic 6-cowrie shell physics engine
+│   └── retrieval.ts           # Offline semantic search & citation matcher
+├── public/                    # Audio, textures, 3D glTF models, and icons
+├── package.json               # Dependencies and build scripts
 └── next.config.mjs            # Next.js configuration
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started & Local Development
 
 ### Prerequisites
-- **Node.js**: `v18.17+` or `v20+`
+- **Node.js**: `v20.0.0` or higher
 - **npm** or **pnpm**
-- **Anthropic API Key**: *(Optional)* Required only for Live Mode Claude calls.
+- **Anthropic Claude API Key**: (Optional — the app defaults to offline mode with 100% functionality if omitted)
 
-### 1. Clone & Install
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/Swaraj0160/bharatverse-nalanda.git
 cd bharatverse-nalanda
-npm install
 ```
 
-### 2. Environment Configuration
-Copy the reference configuration:
+### 2. Configure Environment (Optional)
 ```bash
 cp .env.example .env.local
 ```
-*(Leave blank for offline Demo Mode, or supply `ANTHROPIC_API_KEY` for live Claude generation).*
+Add your Anthropic API key to test live Claude generation:
+```env
+ANTHROPIC_API_KEY=your_api_key_here
+```
 
-### 3. Launch Development Server
+### 3. Install Dependencies
+```bash
+npm install
+```
+
+### 4. Start Development Server
 ```bash
 npm run dev
 ```
-Navigate to [http://localhost:3000](http://localhost:3000).
-
-### 4. Build for Production
-```bash
-npm run build
-npm start
-```
+Navigate to `http://localhost:3000` to launch the platform.
 
 ---
 
-## 🏛️ Sourcing & Academic References
+## Author & Historical Citations
 
-All narrative passages and artifact descriptions are cataloged in [`docs/SOURCES.md`](docs/SOURCES.md) and derived from:
-- **Travel Records of Xuanzang:** *Great Tang Records on the Western Regions* (7th century CE).
-- **Minhaj-i-Siraj:** *Tabaqat-i-Nasiri* (c. 1260 CE).
-- **Archaeological Survey of India (ASI):** Excavation reports on Nalanda Mahavihara ruins (Site No. 1–11).
-- **Ancient Board Game Rules:** Traditional Indian Pachisi / Chaupar rules and cowrie throw mathematics.
-
----
-
-## 🤝 Contributing
-
-Contributions to historical accuracy, 3D WebXR assets, and board game heuristics are welcome! See [`CONTRIBUTING.md`](CONTRIBUTING.md) for details.
-
----
-
-## 👥 Authors & Hackathon Team
-
-- **Architect & Developer:** **Swaraj Ingale** ([@Swaraj0160](https://github.com/Swaraj0160))
+- **Lead Engineer & Heritage Architect:** **Swaraj Ingale** ([@Swaraj0160](https://github.com/Swaraj0160))
 - **Hackathon:** Smart India Hackathon 2026 (Problem Statement SIH26208)
+- **Authoritative Historical Sources:**
+  - *Buddhist Records of the Western World* (*Da Tang Xiyu Ji*) by Xuanzang (645 CE)
+  - *A Record of Buddhist Practices Sent Home from the Southern Sea* by Yijing (695 CE)
+  - Archaeological Survey of India ([ASI](https://asi.nic.in/)) Nalanda Excavation Reports
+  - *Tabaqat-i-Nasiri* by Minhaj-i-Siraj
